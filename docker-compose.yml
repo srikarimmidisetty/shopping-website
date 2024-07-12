@@ -1,0 +1,19 @@
+# docker-compose.yml
+version: '3'
+services:
+  backend:
+    build: ./shopping-backend
+    ports:
+      - "3000:3000"
+    networks:
+      - shopping-network
+  frontend:
+    build: ./shopping-frontend
+    ports:
+      - "80:80"
+    networks:
+      - shopping-network
+
+networks:
+  shopping-network:
+
